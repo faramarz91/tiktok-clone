@@ -5,7 +5,7 @@
             class="rounded-full lg:mx-0 mx-auto"
             width="35"
             src="https://picsum.photos/300?random=2"
-        >
+            alt="user">
         <div class="lg:pl-2.5 lg:block hidden">
             <div class="flex items-center">
                 <div class="font-bold text-[14px]">

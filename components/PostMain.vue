@@ -41,7 +41,7 @@
                             class="absolute right-2 bottom-14"
                             width="90"
                             src="~/assets/images/tiktok-logo-white.png"
-                        >
+                         alt="user">
                     </div>
                     <div class="relative mr-[75px]">
                         <div class="absolute bottom-0 pl-2">
