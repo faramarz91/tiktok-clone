@@ -3,7 +3,7 @@
         id="TopNav"
         class="fixed bg-white z-30 flex items-center w-full border-b h-[61px]"
     >
-        <div 
+        <div
             :class="route.fullPath === '/' ? 'max-w-[1150px]' : ''"
             class="flex justify-between items-center w-full px-6 mx-auto"
         >
@@ -18,7 +18,7 @@
             <div
                 class="hidden md:flex items-center bg-[#f1f1f2] p-1 rounded-full max-w-[380px] w-full"
             >
-                <input 
+                <input
                     type="text"
                     class="w-full pl-3 my-2 bg-transparent placeholder-[#838383] text-[15px] focus:outline-none"
                     placeholder="Search account"
@@ -43,25 +43,30 @@
                     <Icon class="ml-1 mr-4 " name="carbon:send-alt" color="#161724" size="30"/>
                     <Icon class="mr-5" name="bx:message-detail" color="#161724" size="27"/>
                     <div class="relative">
-                        <button class="mt-1">
+                        <button class="mt-1" @click="toggleMenu">
                             <img
-                                src="https://picsum.photos/300?random=1" 
+                                src="https://picsum.photos/300?random=1"
                                 class="rounded-full w-10"
                                 alt=""
                             >
                         </button>
 
-                        <div v-if="true"
+                        <div v-if="showMenu"
                             id="PopupMenu"
-                            class="absolute bg-white rounded-lg py-1.5 w-[200px] shadow-xl border top-[43px] -right-2"
+                            class="absolute bg-white rounded-lg py-1.5 w-[200px] shadow-xl border top-[43px] mt-3 -right-2"
                         >
                             <nuxt-link
-                                @click="$event => showMenu = false"
                                 class="flex items-center justify-start py-3 px-2 hover:bg-gray-100 cursor-pointer"
                             >
                                 <Icon name="ph:user" size="20"/>
                                 <span class="pl-2 font-semibold text-sm">Profile</span>
                             </nuxt-link>
+                            <div
+                                class="flex items-center justify-start py-3 px-1.5 hover:bg-gray-100 border-t cursor-pointer"
+                            >
+                                <Icon name="ic:outline-logout" size="20"/>
+                                <span class="pl-2 font-semibold text-sm">Logout</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,4 +77,9 @@
 
 <script setup>
     const route = useRoute();
+    const showMenu = ref(false)
+
+    const toggleMenu = () => {
+      showMenu.value = !showMenu.value;
+    }
 </script>
